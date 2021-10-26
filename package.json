@@ -2,12 +2,11 @@
   "name": "just-tech-news",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "start": "node server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dghooley/just-tech-news.git"
@@ -24,5 +23,6 @@
     "mysql2": "^2.3.2",
     "sequelize": "^6.8.0"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
