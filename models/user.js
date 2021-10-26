@@ -2,18 +2,18 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User model
-class User extends Model {}
+class User extends Model { }
 
 // define table columns and configuration
 User.init(
     {
         // define an id column
         id: {
-            // use the special Sequelize DataTypes object provide what type
+            // use the special Sequelize DataTypes object provide what type of data it is
             type: DataTypes.INTEGER,
             // this is the equivalent of SQL's `NOT NULL` option
             allowNull: false,
-            // instruct that this is the PRimary Key
+            // instruct that this is the Primary Key
             primaryKey: true,
             // turn on auto increment
             autoIncrement: true
@@ -23,13 +23,13 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // define and email column
+        // define an email column
         email: {
-            type:DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
-            // there cannot be any duplicate emai values in thei table
+            // there cannot be any duplicate email values in this table
             unique: true,
-            // if allowNull is se t false, we can run our data thrgouh validators before creating the table data
+            // if allowNull is set to false, we can run our data through validators before creating the table data
             validate: {
                 isEmail: true
             }
@@ -39,7 +39,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                // this means the password mush be at least four characters long
+                // this means the password must be at least four characters long
                 len: [4]
             }
         }
@@ -51,6 +51,6 @@ User.init(
         underscored: true,
         modelName: 'user'
     }
-);    
+);
 
 module.exports = User;
